@@ -97,7 +97,7 @@ const Home = () => {
                                 <p className="text-xs text-red-400">[coming soon]</p>
                             </div>
                             <div className="m-1 text-sm">
-                                <p>Retrieves employee data from a specific employee by external identifier.</p>
+                                <p>Retrieves employee data from a specific employee by external identifier. hihi</p>
                             </div>
                         </div>
 
