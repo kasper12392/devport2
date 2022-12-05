@@ -1,6 +1,6 @@
 import React from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faAnglesRight, faAnglesLeft, faFileLines, faPaperPlane, faPersonDigging, faPlug, faWifi, faUser, faCircleDown, faCircleUp, faCircleChevronDown, faCircleChevronUp} from '@fortawesome/free-solid-svg-icons'
+import {faAnglesRight, faAnglesLeft, faFileLines, faPaperPlane, faPersonDigging, faPlug, faWifi, faUser, faCircleDown, faCircleUp, faCircleChevronDown, faCircleNodes} from '@fortawesome/free-solid-svg-icons'
 import {Link} from "react-router-dom";
 
 const Home = () => {
