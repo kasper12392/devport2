@@ -6,8 +6,14 @@ module.exports = {
   theme: {
     fontFamily: {
       'sans': ['Cera Round Pro, Segoe UI, Roboto, Oxygen'],
+      'code' : ['ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace'],
     },
-    extend: {},
+    extend: {
+      colors: {
+        'navbar': '#20232a',
+        'navbar90': '#373940',
+      },
+    },
   },
   plugins: [],
 }

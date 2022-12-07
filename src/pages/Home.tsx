@@ -1,6 +1,6 @@
 import React from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faAnglesRight, faAnglesLeft, faFileLines, faPaperPlane, faPersonDigging, faPlug, faWifi, faUser, faCircleDown, faCircleUp, faCircleChevronDown, faCircleNodes} from '@fortawesome/free-solid-svg-icons'
+import {faAnglesRight, faAnglesLeft, faFileLines, faPaperPlane, faPersonDigging, faPlug, faWifi, faUser, faCircleDown, faCircleUp, faGear, faCircleNodes} from '@fortawesome/free-solid-svg-icons'
 import {Link} from "react-router-dom";
 
 const Home = () => {
@@ -9,10 +9,10 @@ const Home = () => {
             <div className="w-1/2 border-r-2 mr-10">
                 <ul>
                     <li className=""><p className="font-bold">Content</p></li>
-                    <li className=""><a href="default.asp" className="hover:text-sky-600">About</a></li>
-                    <li className=""><a href="default.asp" className="hover:text-sky-600">Get started!</a></li>
-                    <li className=""><a href="default.asp" className="hover:text-sky-600">Change policy</a></li>
-                    <li className=""><a href="default.asp" className="hover:text-sky-600">Available services</a></li>
+                    <li className=""><a href="default.asp" className="hover:text-orange-600">About</a></li>
+                    <li className=""><a href="default.asp" className="hover:text-orange-600">Get started!</a></li>
+                    <li className=""><a href="default.asp" className="hover:text-orange-600">Change policy</a></li>
+                    <li className=""><a href="default.asp" className="hover:text-orange-600">Available services</a></li>
                 </ul>
             </div>
 
@@ -26,7 +26,7 @@ const Home = () => {
                 </section>
 
                 <section>
-                    <h3 className="text-3xl font-bold">Get started!</h3>
+                    <h3 className="text-3xl font-bold">Features</h3>
                     <p className="mt-1">
                         The Benefits-Plaza API is a RESTful API that facilitates retrieving data from the Benefits-Plaza SaaS-platform. The API accepts and returns JSON and can
                         only be accessed by registered users. This documentation describes version 1.0 of the API.
@@ -187,9 +187,9 @@ const Home = () => {
                         {/*    </div>*/}
                         {/*</div>*/}
 
-                        <div className="rounded-xl font-bold text-l inline-flex flex-col w-52">
+                        <div className="rounded-xl font-bold text-l inline-flex flex-col w-52 shadow-lg">
                             <div className="bg-gray-800 text-white py-2 rounded-t-lg">
-                                <span className="ml-3"><FontAwesomeIcon icon={faCircleDown} className="text-sky-400 pr-2"/>EmployeeGet</span>
+                                <span className="ml-3"><FontAwesomeIcon icon={faGear} className="text-sky-400 pr-2"/>EmployeeGet</span>
                             </div>
                             <div className="bg-gray-50 rounded-b-lg border-4 border-t-0 border-gray-800 grow">
                                 <div className="text-sm grow font-medium flex">
@@ -198,9 +198,9 @@ const Home = () => {
                             </div>
                         </div>
 
-                        <div className="rounded-xl font-bold text-l inline-flex flex-col w-52">
+                        <div className="rounded-xl font-bold text-l inline-flex flex-col w-52 shadow-lg">
                             <div className="bg-gray-800 text-white py-2 rounded-t-lg">
-                                <span className="ml-3"><FontAwesomeIcon icon={faCircleDown} className="text-sky-400 pr-2"/>EmployeePoliciesGet</span>
+                                <span className="ml-3"><FontAwesomeIcon icon={faGear} className="text-sky-400 pr-2"/>EmployeePoliciesGet</span>
                             </div>
                             <div className="bg-gray-50 rounded-b-lg border-4 border-t-0 border-gray-800 grow">
                                 <div className="text-sm grow font-medium flex">
@@ -209,9 +209,9 @@ const Home = () => {
                             </div>
                         </div>
 
-                        <div className="rounded-xl font-bold text-l inline-flex flex-col w-52">
+                        <div className="rounded-xl font-bold text-l inline-flex flex-col w-52 shadow-lg">
                             <div className="bg-gray-800 text-white py-2 rounded-t-lg">
-                                <span className="ml-3"><FontAwesomeIcon icon={faCircleUp} className="text-orange-400 pr-2"/>EmployeePost</span>
+                                <span className="ml-3"><FontAwesomeIcon icon={faGear} className="text-orange-400 pr-2"/>EmployeePost</span>
                                 {/*<FontAwesomeIcon icon={faWifi} className="text-orange-400 px-3 m-auto"/><span className="grow"></span><span className="px-3">EmployeePost</span>*/}
                             </div>
                             <div className="bg-gray-50 rounded-b-lg border-4 border-t-0 border-gray-800 grow">

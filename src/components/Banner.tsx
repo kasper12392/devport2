@@ -13,7 +13,7 @@ const Banner = () => {
                 {/*<FontAwesomeIcon icon={faGhost} className="m-auto text-white font-bold text-5xl"/>*/}
             {/*</div>*/}
             <img className="w-full h-full object-cover object-top" src={require('../resources/dinges.jpg')}/>
-            <span className="opacity-90 absolute top-1/2 left-36 -translate-x-1/2 -translate-y-1/2 text-white font-semibold text-4xl"><span className="font-extrabold">API</span> · devport</span>
+            <span className="opacity-90 absolute top-1/2 left-40 -translate-x-1/2 -translate-y-1/2 text-white font-medium text-4xl"><span className="font-extrabold">BP API</span> · devport</span>
         </div>
     );
 };
