@@ -1,10 +1,12 @@
 import React from 'react';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 import NavBar from "./components/NavBar";
-import Home from "./pages/Home";
-import Connecting from "./pages/Connecting";
 import Banner from "./components/Banner";
 import Banner2 from "./components/Banner2";
+import Home from "./pages/Home";
+import Connecting from "./pages/Connecting";
+import Postman from "./pages/Postman";
+import Swagger from "./pages/Swagger";
 
 function App() {
     return (
@@ -17,8 +19,11 @@ function App() {
                 <Routes>
                     <Route path="/">
                         {/*<Route index element={<NavBar/>}/>*/}
+                        <Route path="/" element={<Navigate replace to="/home" />} />
                         <Route path="home" element={<Home/>}/>
-                        <Route path="getting-started" element={<Connecting/>}/>
+                        <Route path="connecting" element={<Connecting/>}/>
+                        <Route path="postman" element={<Postman/>}/>
+                        <Route path="swagger" element={<Swagger/>}/>
                         <Route path="" element={<Home/>}/>
                         {/*<Route path="*" element={<NoPage/>}/>*/}
                     </Route>

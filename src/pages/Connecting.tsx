@@ -1,22 +1,40 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {fa1, fa2, fa3, faTriangleExclamation} from "@fortawesome/free-solid-svg-icons";
+import {fa1, fa2, fa3, faAnglesRight, faEnvelope, faTriangleExclamation} from "@fortawesome/free-solid-svg-icons";
+import {faCopy, faImage, faPaste} from "@fortawesome/free-regular-svg-icons";
 
 const Connecting = () => {
     return (
         <div className="max-w-screen-xl mx-auto mt-16 text-gray-700 flex">
 
+            <div className="pr-1 border-r-2 mr-8">
+                <ul className="truncate pr-4">
+                    {/*<li className=""><p className="font-bold">Content</p></li>*/}
+                    {/*<li className=""><a href="default.asp" className="hover:text-sky-600">Step 1: Authorization</a></li>*/}
+                    {/*<li className=""><a href="default.asp" className="hover:text-sky-600">Step 2: Refresh</a></li>*/}
+                    {/*<li className=""><a href="default.asp" className="hover:text-sky-600">Step 3: Obtaining data</a></li>*/}
+                    {/*<li className=""><a href="default.asp" className="hover:text-sky-600">Step 4: Posting data</a></li>*/}
 
-
-            <div className="w-1/2 border-r-2 mr-10">
-                <ul className="truncate pr-2">
-                    <li className=""><p className="font-bold">Content</p></li>
-                    <li className=""><a href="default.asp" className="hover:text-sky-600">Step 1: Authorization</a></li>
-                    <li className=""><a href="default.asp" className="hover:text-sky-600">Step 2: Refresh</a></li>
-                    <li className=""><a href="default.asp" className="hover:text-sky-600">Step 3: Obtaining data</a></li>
-                    <li className=""><a href="default.asp" className="hover:text-sky-600">Step 4: Posting data</a></li>
+                    <li className=""><p className="font-bold text-base">Steps</p></li>
+                    <li className=""><a href="default.asp" className="hover:text-orange-600">1. Authorization</a></li>
+                    <li className=""><a href="default.asp" className="hover:text-orange-600">2. Refresh</a></li>
+                    <li className=""><a href="default.asp" className="hover:text-orange-600">3. Obtaining data</a></li>
+                    <li className=""><a href="default.asp" className="hover:text-orange-600">4. Posting data</a></li>
                 </ul>
             </div>
+
+            {/*<div className="flex-col">*/}
+            {/*    <div className="rounded bg-gray-100 border-2 p-2 mr-10 text-sm">*/}
+            {/*        <ul className="truncate">*/}
+            {/*            <li className=""><p className="font-bold text-base">Steps</p></li>*/}
+            {/*            <li className=""><a href="default.asp" className="hover:text-sky-600">1. Authorization</a></li>*/}
+            {/*            <li className=""><a href="default.asp" className="hover:text-sky-600">2. Refresh</a></li>*/}
+            {/*            <li className=""><a href="default.asp" className="hover:text-sky-600">3. Obtaining data</a></li>*/}
+            {/*            <li className=""><a href="default.asp" className="hover:text-sky-600">4. Posting data</a></li>*/}
+            {/*        </ul>*/}
+            {/*        <div className="flex-grow"></div>*/}
+            {/*    </div>*/}
+            {/*</div>*/}
 
             <div className="space-y-12">
 
@@ -31,21 +49,101 @@ const Connecting = () => {
 
                 <section>
                     <h3 className="text-3xl font-bold">Step 1: Authorization</h3><span className="text-base font-medium">(Obtaining a refresh and access token)</span>
-                    <br/><br/>
-                    Requirements:
-                    {/*https://stackoverflow.com/questions/6260457/using-headers-with-the-python-requests-librarys-get-method*/}
-                    Header:
-                    <li>access token</li>
-                    Example request:
-                    Example response:
-                    Endpoint:
-                    <p className="mt-1">
-                        The Benefits-Plaza API is a RESTfull API that facilitates retrieving data from the Benefits-Plaza SaaS-platform. The API accepts and returns JSON and can
-                        only be accessed by registered users. This documentation describes version 1.0 of the API.
+
+                    <div className="h-6"></div>
+
+                    {/*<div className="group w-2/5 inline-flex">*/}
+                    {/*    <div className="bg-orange-500 px-1 pb-0.5 rounded-l-lg border-2 border-orange-500">*/}
+                    {/*        <span className="text-white font-bold">post</span>*/}
+                    {/*    </div>*/}
+                    {/*    <div className="text-sm px-1 bg-gray-50 rounded-r-lg border-l-0 border-2 border-gray-300 grow flex">*/}
+                    {/*        <div className="grow m-auto pl-1">https://api.benefits-plaza.nl/bpapi/authorize</div><button><FontAwesomeIcon icon={faCopy}/></button>*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
+                    {/*<br/><br/>*/}
+
+
+                    <p>
+                        Before you can obtain data you must authorize as a user by using your <span className="font-bold">clientId</span> and <span className="font-bold">clientSecret</span>.
+                        Make sure to use the all headers shown below.
+                        After a successful request you obtain a <span className="font-bold">access_token</span> and <span className="font-bold">refresh_token</span> make sure to save these.
+                        The <span className="font-bold">expires_in</span> field refers to the expiration of the <span className="font-bold">access_token</span> in seconds.
+                        The <span className="font-bold">expires_in</span> has an expiration time of 30 days.
                     </p>
+
+                    <div className="h-6"></div>
+
+                    <div className="bg-gray-700 w-3/5 rounded-lg rounded-b-none pl-2 py-1 font-bold text-white">Request:</div>
+                    <div className="rounded-lg rounded-t-none w-3/5 bg-gray-800 p-3 pt-2 text-sm text-white font-code">
+                        <p><span className="font-bold text-rose-400">url </span>: <span className="text-green-300">'https://api.benefits-plaza.nl/bpapi/authorize'</span> <button><FontAwesomeIcon icon={faCopy}/></button></p>
+                        <p><span className="font-bold text-rose-400">method </span>: <span className="font-bold text-orange-300">post</span></p>
+                        <p><span className="font-bold text-rose-400">headers </span>: &#123;</p>
+                        <p><span className="text-gray-200">&ensp;'content_type'</span> : <span className="text-green-300">'application/x-www-form-urlencoded;charset=UTF-8'</span></p>
+                        <p><span className="text-gray-200">&ensp;'grant_type'</span> : <span className="text-green-300">'authorization'</span></p>
+                        {/*<p><span className="text-gray-200">&ensp;'client_id'</span> : <span className="text-green-300">'12345'</span></p>*/}
+                        {/*<p><span className="text-gray-200">&ensp;'client_secret'</span> : <span className="text-green-300">'hjsrrhtshrtsdgr'</span></p>*/}
+                        <p><span className="text-gray-200">&ensp;'client_id'</span> : <span className="text-blue-300">&#123; clientId:string &#125;</span></p>
+                        <p><span className="text-gray-200">&ensp;'client_secret'</span> : <span className="text-blue-300">&#123; clientSecret:string &#125;</span></p>
+                        <p>&#125;</p>
+                        <p><span className="font-bold text-rose-400">body </span>: &#123;&#125;</p>
+                    </div>
+
+                    <div className="h-4"></div>
+
+                    <div className="bg-gray-700 w-3/5 rounded-lg rounded-b-none pl-2 py-1 font-bold text-white">Response:</div>
+                    <div className="rounded-lg rounded-t-none w-3/5 bg-gray-800 p-3 pt-2 text-sm text-white font-code">
+                        <p><span className="font-bold text-rose-400">body </span>: &#123;</p>
+                        <p><span className="text-gray-200">&ensp;'access_token'</span> : <span className="text-green-300">'0jd7M03XYcQFwRjTVI91tsGIO'</span></p>
+                        <p><span className="text-gray-200">&ensp;'token_type'</span> : <span className="text-green-300">'Bearer'</span></p>
+                        <p><span className="text-gray-200">&ensp;'expires_in'</span> : <span className="text-cyan-300">600</span></p>
+                        <p><span className="text-gray-200">&ensp;'refresh_token'</span> : <span className="text-green-300">'adanNl0dkl0GRnHjZERGfmWxY'</span></p>
+                        <p>&#125;</p>
+                    </div>
+
+                    <div className="h-4"></div>
+
+                    {/*Requirements:*/}
+                    {/*/!*https://stackoverflow.com/questions/6260457/using-headers-with-the-python-requests-librarys-get-method*!/*/}
+                    {/*Header:*/}
+                    {/*<li>access token</li>*/}
+                    {/*Example request:*/}
+                    {/*Example response:*/}
+                    {/*Endpoint:*/}
+                    {/*<p className="mt-1">*/}
+                    {/*    The Benefits-Plaza API is a RESTfull API that facilitates retrieving data from the Benefits-Plaza SaaS-platform. The API accepts and returns JSON and can*/}
+                    {/*    only be accessed by registered users. This documentation describes version 1.0 of the API.*/}
+                    {/*</p>*/}
                 </section>
                 <section>
                     <h3 className="text-3xl font-bold">Step 2: Refresh</h3><span className="text-base font-medium">(Refreshing the refresh and access token)</span>
+
+                    <div className="h-4"></div>
+
+                    <div className="bg-gray-700 w-3/5 rounded-lg rounded-b-none pl-2 py-1 font-bold text-white">Request:</div>
+                    <div className="rounded-lg rounded-t-none w-3/5 bg-gray-800 p-3 pt-2 text-sm text-white font-code">
+                        <p><span className="font-bold text-rose-400">url </span>: <span className="text-green-300">'https://api.benefits-plaza.nl/bpapi/refresh'</span> <button><FontAwesomeIcon icon={faCopy}/></button></p>
+                        <p><span className="font-bold text-rose-400">method </span>: <span className="font-bold text-orange-300">post</span></p>
+                        <p><span className="font-bold text-rose-400">headers </span>: &#123;</p>
+                        <p><span className="text-gray-200">&ensp;'content_type'</span> : <span className="text-green-300">'application/x-www-form-urlencoded;charset=UTF-8'</span></p>
+                        <p><span className="text-gray-200">&ensp;'grant_type'</span> : <span className="text-green-300">'refresh'</span></p>
+                        <p><span className="text-gray-200">&ensp;'refresh_token'</span> : <span className="text-blue-300">&#123; refreshToken:string &#125;</span></p>
+                        <p>&#125;</p>
+                        <p><span className="font-bold text-rose-400">body </span>: &#123;&#125;</p>
+                    </div>
+
+                    <br/>
+
+                    <div className="bg-gray-700 w-3/5 rounded-lg rounded-b-none pl-2 py-1 font-bold text-white">Response:</div>
+                    <div className="rounded-lg rounded-t-none w-3/5 bg-gray-800 p-3 pt-2 text-sm text-white font-code">
+                        <p><span className="font-bold text-rose-400">body </span>: &#123;</p>
+                        <p><span className="text-gray-200">&ensp;'access_token'</span> : <span className="text-green-300">'0jd7M03XYcQFwRjTVI91tsGIO'</span></p>
+                        <p><span className="text-gray-200">&ensp;'token_type'</span> : <span className="text-green-300">'Bearer'</span></p>
+                        <p><span className="text-gray-200">&ensp;'expires_in'</span> : <span className="text-cyan-300">600</span></p>
+                        <p><span className="text-gray-200">&ensp;'refresh_token'</span> : <span className="text-green-300">'adanNl0dkl0GRnHjZERGfmWxY'</span></p>
+                        <p>&#125;</p>
+                    </div>
+
+
                     <p className="mt-1">
                         In time the API, and policies regarding the API can change. These changes are subject to the following guidelines.
                         The following states hold true for the change policy for this API:

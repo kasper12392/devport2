@@ -1,14 +1,14 @@
 import React from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faAnglesRight, faAnglesLeft, faFileLines, faPaperPlane, faPersonDigging, faPlug, faWifi, faUser, faCircleDown, faCircleUp, faGear, faCircleNodes} from '@fortawesome/free-solid-svg-icons'
+import {faAnglesRight, faFileLines, faPaperPlane, faPersonDigging, faPlug, faPencil, faFile, faCloudArrowUp, faCloud, faGear, faFire, faEye, faBolt, faEnvelope, faCircleUp, faCircleDown} from '@fortawesome/free-solid-svg-icons'
 import {Link} from "react-router-dom";
 
 const Home = () => {
     return (
         <div className="max-w-screen-xl mx-auto mt-16 text-gray-700 flex">
-            <div className="w-1/2 border-r-2 mr-10">
-                <ul>
-                    <li className=""><p className="font-bold">Content</p></li>
+            <div className="border-r-2 pr-3 mr-10">
+                <ul className="truncate">
+                    <li className=""><p className="font-bold text-base">Home</p></li>
                     <li className=""><a href="default.asp" className="hover:text-orange-600">About</a></li>
                     <li className=""><a href="default.asp" className="hover:text-orange-600">Get started!</a></li>
                     <li className=""><a href="default.asp" className="hover:text-orange-600">Change policy</a></li>
@@ -26,14 +26,14 @@ const Home = () => {
                 </section>
 
                 <section>
-                    <h3 className="text-3xl font-bold">Features</h3>
+                    <h3 className="text-3xl font-bold">Get started!</h3>
                     <p className="mt-1">
                         The Benefits-Plaza API is a RESTful API that facilitates retrieving data from the Benefits-Plaza SaaS-platform. The API accepts and returns JSON and can
                         only be accessed by registered users. This documentation describes version 1.0 of the API.
                     </p>
 
                     <div className="space-x-6 opacity-90">
-                        <Link to="/getting-started">
+                        <Link to="/connecting">
                             <div className="group rounded-xl text-white font-bold text-l inline-flex mt-2">
                                 <div className="bg-sky-500 py-2 px-2 rounded-l-lg group-hover:bg-sky-600">
                                     <FontAwesomeIcon icon={faPlug}/> Connecting
@@ -47,7 +47,7 @@ const Home = () => {
                         <Link to="/postman">
                             <div className="group rounded-xl text-white font-bold text-l inline-flex mt-2">
                                 <div className="bg-orange-500 py-2 px-2 rounded-l-lg group-hover:bg-orange-600">
-                                    <FontAwesomeIcon icon={faPaperPlane}/> Postman
+                                    <FontAwesomeIcon icon={faEnvelope}/> Postman
                                 </div>
                                 <div className="bg-orange-600 py-2 px-1 rounded-r-full group-hover:bg-orange-700">
                                     <FontAwesomeIcon icon={faAnglesRight}/>
@@ -156,40 +156,16 @@ const Home = () => {
 
                         {/*<div className="rounded-xl font-bold text-l inline-flex flex-col w-48">*/}
                         {/*    <div className="bg-gray-50 py-2 rounded-t-lg border-4 border-b-0 border-gray-800 flex">*/}
-                        {/*        <FontAwesomeIcon icon={faUser} className="text-4xl text-sky-500 m-auto"/>*/}
+                        {/*        <FontAwesomeIcon icon={faBolt} className="text-4xl text-sky-500 m-auto"/>*/}
                         {/*    </div>*/}
                         {/*    <div className="bg-gray-800 text-white py-2 rounded-b-lg flex">*/}
                         {/*        <span className="m-auto"><span className="text-sky-400">[get] </span>EmployeeGet</span>*/}
                         {/*    </div>*/}
                         {/*</div>*/}
 
-                        {/*<div className="rounded-xl font-bold text-l inline-flex flex-col w-48">*/}
-                        {/*    <div className="bg-gray-800 text-white py-2 rounded-t-lg flex">*/}
-                        {/*        <span className="m-auto"><span className="text-sky-400">[Get] </span>EmployeeGet</span>*/}
-                        {/*    </div>*/}
-                        {/*    <div className="bg-gray-50 rounded-b-lg border-4 border-t-0 border-gray-800 grow">*/}
-                        {/*        /!*<FontAwesomeIcon icon={faUser} className="text-4xl text-sky-500 m-auto"/>*!/*/}
-                        {/*        <div className="text-sm grow font-medium flex">*/}
-                        {/*            <span className="m-auto p-1">Retrieves an employee by external identifier</span>*/}
-                        {/*        </div>*/}
-                        {/*    </div>*/}
-                        {/*</div>*/}
-
-                        {/*<div className="rounded-xl font-bold text-l inline-flex flex-col w-48">*/}
-                        {/*    <div className="bg-gray-800 text-white py-2 rounded-t-lg flex">*/}
-                        {/*        <span className="m-auto"><FontAwesomeIcon icon={faWifi}/> EmployeePolicies<span className="text-sky-400">Get</span></span>*/}
-                        {/*    </div>*/}
-                        {/*    <div className="bg-gray-50 rounded-b-lg border-4 border-t-0 border-gray-800 grow">*/}
-                        {/*        /!*<FontAwesomeIcon icon={faUser} className="text-4xl text-sky-500 m-auto"/>*!/*/}
-                        {/*        <div className="text-sm grow font-medium flex">*/}
-                        {/*            <span className="m-auto p-1">Retrieves an employee with policy details by external identifier</span>*/}
-                        {/*        </div>*/}
-                        {/*    </div>*/}
-                        {/*</div>*/}
-
                         <div className="rounded-xl font-bold text-l inline-flex flex-col w-52 shadow-lg">
-                            <div className="bg-gray-800 text-white py-2 rounded-t-lg">
-                                <span className="ml-3"><FontAwesomeIcon icon={faGear} className="text-sky-400 pr-2"/>EmployeeGet</span>
+                            <div className="bg-gray-800 text-white py-1 rounded-t-lg">
+                                <span className="ml-2">{<FontAwesomeIcon icon={faBolt} className="text-sky-400 pr-2"/>}EmployeeGet</span>
                             </div>
                             <div className="bg-gray-50 rounded-b-lg border-4 border-t-0 border-gray-800 grow">
                                 <div className="text-sm grow font-medium flex">
@@ -199,8 +175,8 @@ const Home = () => {
                         </div>
 
                         <div className="rounded-xl font-bold text-l inline-flex flex-col w-52 shadow-lg">
-                            <div className="bg-gray-800 text-white py-2 rounded-t-lg">
-                                <span className="ml-3"><FontAwesomeIcon icon={faGear} className="text-sky-400 pr-2"/>EmployeePoliciesGet</span>
+                            <div className="bg-gray-800 text-white py-1 rounded-t-lg">
+                                <span className="ml-2">{<FontAwesomeIcon icon={faBolt} className="text-sky-400 pr-2"/>}EmployeePoliciesGet</span>
                             </div>
                             <div className="bg-gray-50 rounded-b-lg border-4 border-t-0 border-gray-800 grow">
                                 <div className="text-sm grow font-medium flex">
@@ -210,43 +186,26 @@ const Home = () => {
                         </div>
 
                         <div className="rounded-xl font-bold text-l inline-flex flex-col w-52 shadow-lg">
-                            <div className="bg-gray-800 text-white py-2 rounded-t-lg">
-                                <span className="ml-3"><FontAwesomeIcon icon={faGear} className="text-orange-400 pr-2"/>EmployeePost</span>
-                                {/*<FontAwesomeIcon icon={faWifi} className="text-orange-400 px-3 m-auto"/><span className="grow"></span><span className="px-3">EmployeePost</span>*/}
+                            <div className="bg-gray-800 text-white py-1 rounded-t-lg">
+                                <span className="ml-2">{<FontAwesomeIcon icon={faBolt} className="text-sky-400 pr-2"/>}EmployersGet</span>
                             </div>
                             <div className="bg-gray-50 rounded-b-lg border-4 border-t-0 border-gray-800 grow">
-                                {/*<FontAwesomeIcon icon={faUser} className="text-4xl text-sky-500 m-auto"/>*/}
+                                <div className="text-sm grow font-medium flex">
+                                    <span className="m-auto p-1">Retrieves all the users employers</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="rounded-xl font-bold text-l inline-flex flex-col w-52 shadow-lg">
+                            <div className="bg-gray-800 text-white py-1 rounded-t-lg">
+                                <span className="ml-2">{<FontAwesomeIcon icon={faBolt} className="text-orange-400 pr-2"/>}EmployeePost</span>
+                            </div>
+                            <div className="bg-gray-50 rounded-b-lg border-4 border-t-0 border-gray-800 grow">
                                 <div className="text-sm grow font-medium flex">
                                     <span className="m-auto p-1">Updates an employee by external identifier</span>
                                 </div>
                             </div>
                         </div>
-
-                        {/*<div className="rounded-xl font-bold text-l inline-flex flex-col w-48">*/}
-                        {/*    <div className="bg-gray-800 text-white py-2 rounded-t-lg flex">*/}
-                        {/*        <span className="m-auto"><FontAwesomeIcon icon={faWifi} className="text-orange-400"/> EmployeePost</span>*/}
-                        {/*        /!*<FontAwesomeIcon icon={faWifi} className="text-orange-400 px-3 m-auto"/><span className="grow"></span><span className="px-3">EmployeePost</span>*!/*/}
-                        {/*    </div>*/}
-                        {/*    <div className="bg-gray-50 rounded-b-lg border-4 border-t-0 border-gray-800 grow">*/}
-                        {/*        /!*<FontAwesomeIcon icon={faUser} className="text-4xl text-sky-500 m-auto"/>*!/*/}
-                        {/*        <div className="text-sm grow font-medium flex">*/}
-                        {/*            <span className="m-auto p-1">Updates an employee by external identifier</span>*/}
-                        {/*        </div>*/}
-                        {/*    </div>*/}
-                        {/*</div>*/}
-
-                        {/*<div className="rounded-xl font-bold text-l inline-flex flex-col w-48">*/}
-                        {/*    <div className="bg-gray-800 text-white py-2 rounded-t-lg flex">*/}
-                        {/*        /!*<span className="m-auto"><FontAwesomeIcon icon={faWifi} className="text-orange-400"/> Employee Post</span>*!/*/}
-                        {/*        <FontAwesomeIcon icon={faWifi} className="text-orange-400 px-3 m-auto"/><span className="grow"></span><span className="px-3">EmployeePost</span>*/}
-                        {/*    </div>*/}
-                        {/*    <div className="bg-gray-50 rounded-b-lg border-4 border-t-0 border-gray-800 grow">*/}
-                        {/*        /!*<FontAwesomeIcon icon={faUser} className="text-4xl text-sky-500 m-auto"/>*!/*/}
-                        {/*        <div className="text-sm grow font-medium flex">*/}
-                        {/*            <span className="m-auto p-1">Updates an employee by external identifier</span>*/}
-                        {/*        </div>*/}
-                        {/*    </div>*/}
-                        {/*</div>*/}
 
                     </div>
                 </section>
