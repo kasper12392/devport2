@@ -5,7 +5,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 const Banner = () => {
     return (
-        <div className="opacity-90 relative w-screen h-20">
+        <div className="opacity-90 relative w-full h-14">
             {/*<div className="h-20 bg-gradient-to-r from-indigo-500 to-cyan-500 flex">*/}
                 {/*<span className="m-auto text-white font-semibold text-3xl">~ <span className="font-extrabold">API</span> devport ~</span>*/}
                 {/*<span className="m-auto text-white font-semibold text-3xl">· <span className="font-extrabold">API</span> devport ·</span>*/}

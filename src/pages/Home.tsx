@@ -1,22 +1,13 @@
 import React from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faAnglesRight, faFileLines, faPaperPlane, faPersonDigging, faPlug, faPencil, faFile, faCloudArrowUp, faCloud, faGear, faFire, faEye, faBolt, faEnvelope, faCircleUp, faCircleDown} from '@fortawesome/free-solid-svg-icons'
+import {faAnglesRight, faFileLines, faPaperPlane, faPersonDigging, faPlug, faSeedling, faHandcuffs, faPencil, faFile, faRunning, faPersonRunning, faCloud, faGear, faFire, faEye, faBolt, faEnvelope, faCircleUp, faCircleDown} from '@fortawesome/free-solid-svg-icons'
 import {Link} from "react-router-dom";
 
 const Home = () => {
     return (
-        <div className="max-w-screen-xl mx-auto mt-16 text-gray-700 flex">
-            <div className="border-r-2 pr-3 mr-10">
-                <ul className="truncate">
-                    <li className=""><p className="font-bold text-base">Home</p></li>
-                    <li className=""><a href="default.asp" className="hover:text-orange-600">About</a></li>
-                    <li className=""><a href="default.asp" className="hover:text-orange-600">Get started!</a></li>
-                    <li className=""><a href="default.asp" className="hover:text-orange-600">Change policy</a></li>
-                    <li className=""><a href="default.asp" className="hover:text-orange-600">Available services</a></li>
-                </ul>
-            </div>
+        <div className="max-w-screen-lg mx-auto mt-16 text-gray-700 flex">
 
-            <div className="space-y-12">
+            <div className="space-y-24">
                 <section>
                     <h3 className="text-3xl font-bold">About</h3>
                     <p className="mt-1">
@@ -69,7 +60,7 @@ const Home = () => {
                 </section>
 
                 <section>
-                    <h3 className="text-3xl font-bold">Change policy</h3>
+                    <h3 className="text-3xl font-bold"> Change policy</h3>
                     <p className="mt-1">
                         In time the API, and policies regarding the API can change. These changes are subject to the following guidelines.
                         The following states hold true for the change policy for this API:
@@ -151,8 +142,9 @@ const Home = () => {
 
                 <section>
                     <h3 className="text-3xl font-bold">Available services</h3>
+                    {/*<p className="font-medium text-gray-500 mb-1">(GET requests)</p>*/}
 
-                    <div className="mt-4 opacity-90 space-x-6 flex">
+                    <div className="mt-4 opacity-100 space-x-6 flex">
 
                         {/*<div className="rounded-xl font-bold text-l inline-flex flex-col w-48">*/}
                         {/*    <div className="bg-gray-50 py-2 rounded-t-lg border-4 border-b-0 border-gray-800 flex">*/}
@@ -164,7 +156,7 @@ const Home = () => {
                         {/*</div>*/}
 
                         <div className="rounded-xl font-bold text-l inline-flex flex-col w-52 shadow-lg">
-                            <div className="bg-gray-800 text-white py-1 rounded-t-lg">
+                            <div className="bg-gray-700 text-white py-1 rounded-t-lg">
                                 <span className="ml-2">{<FontAwesomeIcon icon={faBolt} className="text-sky-400 pr-2"/>}EmployeeGet</span>
                             </div>
                             <div className="bg-gray-50 rounded-b-lg border-4 border-t-0 border-gray-800 grow">
@@ -175,7 +167,7 @@ const Home = () => {
                         </div>
 
                         <div className="rounded-xl font-bold text-l inline-flex flex-col w-52 shadow-lg">
-                            <div className="bg-gray-800 text-white py-1 rounded-t-lg">
+                            <div className="bg-gray-700 text-white py-1 rounded-t-lg">
                                 <span className="ml-2">{<FontAwesomeIcon icon={faBolt} className="text-sky-400 pr-2"/>}EmployeePoliciesGet</span>
                             </div>
                             <div className="bg-gray-50 rounded-b-lg border-4 border-t-0 border-gray-800 grow">
@@ -186,7 +178,7 @@ const Home = () => {
                         </div>
 
                         <div className="rounded-xl font-bold text-l inline-flex flex-col w-52 shadow-lg">
-                            <div className="bg-gray-800 text-white py-1 rounded-t-lg">
+                            <div className="bg-gray-700 text-white py-1 rounded-t-lg">
                                 <span className="ml-2">{<FontAwesomeIcon icon={faBolt} className="text-sky-400 pr-2"/>}EmployersGet</span>
                             </div>
                             <div className="bg-gray-50 rounded-b-lg border-4 border-t-0 border-gray-800 grow">
@@ -197,7 +189,7 @@ const Home = () => {
                         </div>
 
                         <div className="rounded-xl font-bold text-l inline-flex flex-col w-52 shadow-lg">
-                            <div className="bg-gray-800 text-white py-1 rounded-t-lg">
+                            <div className="bg-gray-700 text-white py-1 rounded-t-lg">
                                 <span className="ml-2">{<FontAwesomeIcon icon={faBolt} className="text-orange-400 pr-2"/>}EmployeePost</span>
                             </div>
                             <div className="bg-gray-50 rounded-b-lg border-4 border-t-0 border-gray-800 grow">

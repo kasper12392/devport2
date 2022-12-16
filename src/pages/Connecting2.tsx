@@ -5,23 +5,23 @@ import {faCopy, faImage, faPaste} from "@fortawesome/free-regular-svg-icons";
 
 const Connecting = () => {
     return (
-        <div className="max-w-screen-lg mx-auto mt-16 text-gray-700 flex">
+        <div className="max-w-screen-md mx-auto mt-16 text-gray-700 flex">
 
-            <div className="mr-8 rounded h-fit p-2">
-                <ul className="truncate pr-4">
-                    {/*<li className=""><p className="font-bold">Content</p></li>*/}
-                    {/*<li className=""><a href="default.asp" className="hover:text-sky-600">Step 1: Authorization</a></li>*/}
-                    {/*<li className=""><a href="default.asp" className="hover:text-sky-600">Step 2: Refresh</a></li>*/}
-                    {/*<li className=""><a href="default.asp" className="hover:text-sky-600">Step 3: Obtaining data</a></li>*/}
-                    {/*<li className=""><a href="default.asp" className="hover:text-sky-600">Step 4: Posting data</a></li>*/}
+            {/*<div className="mr-8 rounded h-fit p-2">*/}
+            {/*    <ul className="truncate pr-4">*/}
+            {/*        /!*<li className=""><p className="font-bold">Content</p></li>*!/*/}
+            {/*        /!*<li className=""><a href="default.asp" className="hover:text-sky-600">Step 1: Authorization</a></li>*!/*/}
+            {/*        /!*<li className=""><a href="default.asp" className="hover:text-sky-600">Step 2: Refresh</a></li>*!/*/}
+            {/*        /!*<li className=""><a href="default.asp" className="hover:text-sky-600">Step 3: Obtaining data</a></li>*!/*/}
+            {/*        /!*<li className=""><a href="default.asp" className="hover:text-sky-600">Step 4: Posting data</a></li>*!/*/}
 
-                    <li className="border-b-2"><p className="font-bold text-base">Steps</p></li>
-                    <li className=""><a href="default.asp" className="hover:text-orange-600">1. Authorization</a></li>
-                    <li className=""><a href="default.asp" className="hover:text-orange-600">2. Refresh</a></li>
-                    <li className=""><a href="default.asp" className="hover:text-orange-600">3. Obtaining data</a></li>
-                    <li className=""><a href="default.asp" className="hover:text-orange-600">4. Posting data</a></li>
-                </ul>
-            </div>
+            {/*        <li className="border-b-2"><p className="font-bold text-base">Steps</p></li>*/}
+            {/*        <li className=""><a href="default.asp" className="hover:text-orange-600">1. Authorization</a></li>*/}
+            {/*        <li className=""><a href="default.asp" className="hover:text-orange-600">2. Refresh</a></li>*/}
+            {/*        <li className=""><a href="default.asp" className="hover:text-orange-600">3. Obtaining data</a></li>*/}
+            {/*        <li className=""><a href="default.asp" className="hover:text-orange-600">4. Posting data</a></li>*/}
+            {/*    </ul>*/}
+            {/*</div>*/}
 
             {/*<div className="flex-col">*/}
             {/*    <div className="rounded bg-gray-100 border-2 p-2 mr-10 text-sm">*/}
@@ -49,18 +49,18 @@ const Connecting = () => {
                 </div>
 
                 <section>
-                    <h3 className="text-3xl font-bold">Step 1: Authorization</h3><span className="text-base font-medium">(Obtaining a refresh and access token)</span>
-                    {/*<div className="flex items-center h-16 relative z-999">*/}
-                    {/*    <div className="grow"></div>*/}
-                    {/*    /!*<button className="m-auto bg-sky-500 hover:bg-opacity-100 rounded py-3 px-2 rounded-l-xl font-bold text-white bg-opacity-80 relative active:top-0.5"><FontAwesomeIcon icon={faAnglesLeft}/></button>*!/*/}
-                    {/*    <button className="m-auto bg-gray-500 hover:bg-opacity-10 rounded-full py-1 px-2 font-bold bg-opacity-0 relative active:top-0.5"><FontAwesomeIcon icon={faAnglesLeft}/> prev</button>*/}
-                    {/*    <div className="mx-10">*/}
-                    {/*        <h3 className="text-3xl font-bold">Step 1: Authorization</h3><span className="text-base font-medium">(Obtaining a refresh and access token)</span>*/}
-                    {/*    </div>*/}
-                    {/*    /!*<button className="m-auto bg-sky-500 hover:bg-opacity-100 rounded py-3 px-2 rounded-r-xl font-bold text-white bg-opacity-80 relative active:top-0.5"><FontAwesomeIcon icon={faAnglesRight}/></button>*!/*/}
-                    {/*    <button className="m-auto bg-gray-500 hover:bg-opacity-10 rounded-full py-1 px-2 font-bold bg-opacity-0 relative active:top-0.5">next <FontAwesomeIcon icon={faAnglesRight}/></button>*/}
-                    {/*    <div className="grow"></div>*/}
-                    {/*</div>*/}
+                    {/*<h3 className="text-3xl font-bold">Step 1: Authorization</h3><span className="text-base font-medium">(Obtaining a refresh and access token)</span>*/}
+                    <div className="flex items-center h-16 relative z-999">
+                        <div className="grow"></div>
+                        {/*<button className="m-auto bg-sky-500 hover:bg-opacity-100 rounded py-3 px-2 rounded-l-xl font-bold text-white bg-opacity-80 relative active:top-0.5"><FontAwesomeIcon icon={faAnglesLeft}/></button>*/}
+                        <button className="m-auto bg-gray-500 hover:bg-opacity-10 rounded-full py-1 px-2 font-bold bg-opacity-0 relative active:top-0.5"><FontAwesomeIcon icon={faAnglesLeft}/> prev</button>
+                        <div className="mx-10">
+                            <h3 className="text-3xl font-bold">Step 1: Authorization</h3><span className="text-base font-medium">(Obtaining a refresh and access token)</span>
+                        </div>
+                        {/*<button className="m-auto bg-sky-500 hover:bg-opacity-100 rounded py-3 px-2 rounded-r-xl font-bold text-white bg-opacity-80 relative active:top-0.5"><FontAwesomeIcon icon={faAnglesRight}/></button>*/}
+                        <button className="m-auto bg-gray-500 hover:bg-opacity-10 rounded-full py-1 px-2 font-bold bg-opacity-0 relative active:top-0.5">next <FontAwesomeIcon icon={faAnglesRight}/></button>
+                        <div className="grow"></div>
+                    </div>
 
                     <div className="h-6"></div>
 
@@ -152,58 +152,58 @@ const Connecting = () => {
                     {/*    only be accessed by registered users. This documentation describes version 1.0 of the API.*/}
                     {/*</p>*/}
                 </section>
-                <section>
-                    <h3 className="text-3xl font-bold">Step 2: Refresh</h3><span className="text-base font-medium">(Refreshing the refresh and access token)</span>
+                {/*<section>*/}
+                {/*    <h3 className="text-3xl font-bold">Step 2: Refresh</h3><span className="text-base font-medium">(Refreshing the refresh and access token)</span>*/}
 
-                    <div className="h-4"></div>
+                {/*    <div className="h-4"></div>*/}
 
-                    <div className="bg-gray-700   rounded-lg rounded-b-none pl-2 py-1 font-bold text-white">Request:</div>
-                    <div className="rounded-lg rounded-t-none   bg-gray-800 p-3 pt-2 text-sm text-white font-code">
-                        <p><span className="font-bold text-rose-400">url </span>: <span className="text-green-300">'https://api.benefits-plaza.nl/bpapi/refresh'</span>
-                            <button><FontAwesomeIcon icon={faCopy}/></button>
-                        </p>
-                        <p><span className="font-bold text-rose-400">method </span>: <span className="font-bold text-orange-300">post</span></p>
-                        <p><span className="font-bold text-rose-400">headers </span>: &#123;</p>
-                        <p><span className="text-gray-200">&ensp;'content_type'</span> : <span className="text-green-300">'application/x-www-form-urlencoded;charset=UTF-8'</span></p>
-                        <p><span className="text-gray-200">&ensp;'grant_type'</span> : <span className="text-green-300">'refresh'</span></p>
-                        <p><span className="text-gray-200">&ensp;'refresh_token'</span> : <span className="text-blue-300">&#123; refreshToken:string &#125;</span></p>
-                        <p>&#125;</p>
-                        <p><span className="font-bold text-rose-400">body </span>: &#123;&#125;</p>
-                    </div>
+                {/*    <div className="bg-gray-700   rounded-lg rounded-b-none pl-2 py-1 font-bold text-white">Request:</div>*/}
+                {/*    <div className="rounded-lg rounded-t-none   bg-gray-800 p-3 pt-2 text-sm text-white font-code">*/}
+                {/*        <p><span className="font-bold text-rose-400">url </span>: <span className="text-green-300">'https://api.benefits-plaza.nl/bpapi/refresh'</span>*/}
+                {/*            <button><FontAwesomeIcon icon={faCopy}/></button>*/}
+                {/*        </p>*/}
+                {/*        <p><span className="font-bold text-rose-400">method </span>: <span className="font-bold text-orange-300">post</span></p>*/}
+                {/*        <p><span className="font-bold text-rose-400">headers </span>: &#123;</p>*/}
+                {/*        <p><span className="text-gray-200">&ensp;'content_type'</span> : <span className="text-green-300">'application/x-www-form-urlencoded;charset=UTF-8'</span></p>*/}
+                {/*        <p><span className="text-gray-200">&ensp;'grant_type'</span> : <span className="text-green-300">'refresh'</span></p>*/}
+                {/*        <p><span className="text-gray-200">&ensp;'refresh_token'</span> : <span className="text-blue-300">&#123; refreshToken:string &#125;</span></p>*/}
+                {/*        <p>&#125;</p>*/}
+                {/*        <p><span className="font-bold text-rose-400">body </span>: &#123;&#125;</p>*/}
+                {/*    </div>*/}
 
-                    <br/>
+                {/*    <br/>*/}
 
-                    <div className="bg-gray-700   rounded-lg rounded-b-none pl-2 py-1 font-bold text-white">Response:</div>
-                    <div className="rounded-lg rounded-t-none   bg-gray-800 p-3 pt-2 text-sm text-white font-code">
-                        <p><span className="font-bold text-rose-400">body </span>: &#123;</p>
-                        <p><span className="text-gray-200">&ensp;'access_token'</span> : <span className="text-green-300">'0jd7M03XYcQFwRjTVI91tsGIO'</span></p>
-                        <p><span className="text-gray-200">&ensp;'token_type'</span> : <span className="text-green-300">'Bearer'</span></p>
-                        <p><span className="text-gray-200">&ensp;'expires_in'</span> : <span className="text-cyan-300">600</span></p>
-                        <p><span className="text-gray-200">&ensp;'refresh_token'</span> : <span className="text-green-300">'adanNl0dkl0GRnHjZERGfmWxY'</span></p>
-                        <p>&#125;</p>
-                    </div>
-
-
-                    <p className="mt-1">
-                        In time the API, and policies regarding the API can change. These changes are subject to the following guidelines.
-                        The following states hold true for the change policy for this API:
-
-                        Keylane may sometimes introduce changes to the Benefits-Plaza API and policies without advance notice.
-                        Keylane will try to inform users of any (breaking) change in advance.
-                        Keylane will not be liable to you or any third party for such modifications or any adverse effects resulting from such modifications.
-                        Keylane will try to avoid breaking changes as much as possible.
-                    </p>
-                </section>
-                <section>
-                    <h3 className="text-3xl font-bold">3. Get requests</h3>
+                {/*    <div className="bg-gray-700   rounded-lg rounded-b-none pl-2 py-1 font-bold text-white">Response:</div>*/}
+                {/*    <div className="rounded-lg rounded-t-none   bg-gray-800 p-3 pt-2 text-sm text-white font-code">*/}
+                {/*        <p><span className="font-bold text-rose-400">body </span>: &#123;</p>*/}
+                {/*        <p><span className="text-gray-200">&ensp;'access_token'</span> : <span className="text-green-300">'0jd7M03XYcQFwRjTVI91tsGIO'</span></p>*/}
+                {/*        <p><span className="text-gray-200">&ensp;'token_type'</span> : <span className="text-green-300">'Bearer'</span></p>*/}
+                {/*        <p><span className="text-gray-200">&ensp;'expires_in'</span> : <span className="text-cyan-300">600</span></p>*/}
+                {/*        <p><span className="text-gray-200">&ensp;'refresh_token'</span> : <span className="text-green-300">'adanNl0dkl0GRnHjZERGfmWxY'</span></p>*/}
+                {/*        <p>&#125;</p>*/}
+                {/*    </div>*/}
 
 
-                </section>
-                <section>
-                    <h3 className="text-3xl font-bold">4. Post requests (comming soon)</h3>
+                {/*    <p className="mt-1">*/}
+                {/*        In time the API, and policies regarding the API can change. These changes are subject to the following guidelines.*/}
+                {/*        The following states hold true for the change policy for this API:*/}
+
+                {/*        Keylane may sometimes introduce changes to the Benefits-Plaza API and policies without advance notice.*/}
+                {/*        Keylane will try to inform users of any (breaking) change in advance.*/}
+                {/*        Keylane will not be liable to you or any third party for such modifications or any adverse effects resulting from such modifications.*/}
+                {/*        Keylane will try to avoid breaking changes as much as possible.*/}
+                {/*    </p>*/}
+                {/*</section>*/}
+                {/*<section>*/}
+                {/*    <h3 className="text-3xl font-bold">3. Get requests</h3>*/}
 
 
-                </section>
+                {/*</section>*/}
+                {/*<section>*/}
+                {/*    <h3 className="text-3xl font-bold">4. Post requests (comming soon)</h3>*/}
+
+
+                {/*</section>*/}
             </div>
 
         </div>

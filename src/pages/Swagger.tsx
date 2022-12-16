@@ -19,7 +19,7 @@ const Swagger = () => {
     const [selectedUrl, setSelectedUrl] = useState(urls[0].url)
 
     return (
-        <div className="max-w-screen-xl mx-auto mt-8 text-gray-700">
+        <div className="max-w-screen-lg mx-auto mt-8 text-gray-700">
 
             <div className="pb-8">
                 <h1>version:</h1>
@@ -39,7 +39,9 @@ const Swagger = () => {
                 </Transition>
             </div>
 
-            <SwaggerUI url={selectedUrl} />
+            {/*<div className="relative -z-50">*/}
+                <SwaggerUI url={selectedUrl}/>
+            {/*</div>*/}
 
         </div>
     );

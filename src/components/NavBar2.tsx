@@ -12,8 +12,8 @@ const NavBar = () => {
     const [selected, setSelected] = useState("homeyf")
 
     return (
-        <header className="bg-navbar shadow-xl sticky top-0 z-50">
-            <div className="flex h-14 mx-auto items-center max-w-screen-lg text-lg text-gray-100">
+        <header className="bg-white sticky top-0">
+            <div className="flex h-14 mx-auto items-center max-w-screen-lg text-lg text-gray-700">
                 {/*<header className="bg-neutral-100">*/}
                 {/*    <div className="flex h-14 mx-auto items-center max-w-screen-xl text-lg text-gray-700">*/}
 
