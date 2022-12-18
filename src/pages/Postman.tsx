@@ -23,10 +23,10 @@ const Connecting = () => {
 
 
     // Postman download
-    const determineHrefByFileName = (fileName: string, updateData: boolean) => {
+    const determineHrefByFileName = (fileName: string, isEnvironment: boolean) => {
         const collection = require('../resources/' + fileName);
 
-        if (updateData) {
+        if (isEnvironment) {
             collection.clientId = collectionEdit.clientId;
             collection.clientSecret = collectionEdit.clientSecret;
         }
@@ -40,8 +40,6 @@ const Connecting = () => {
     // Paste knop
     const handlePaste = async (name: string) => {
         const value: string = await navigator.clipboard.readText();
-        console.log("name: " + name);
-        console.log("value: " + value);
         if (name === "clientId") {
             setCollectionEdit((prevState: any) => ({
                 ...prevState,
@@ -56,14 +54,10 @@ const Connecting = () => {
         }
     }
 
-    const bleep = () => {
-        console.log("bleep")
-    }
-
 
 
     return (
-        <div className="max-w-screen-lg mx-auto mt-16 text-gray-700 flex">
+        <div className="max-w-screen-lg mx-auto mt-16 text-gray-700 flex text-justify">
 
             <div className="space-y-12">
 
@@ -71,9 +65,11 @@ const Connecting = () => {
                     <h1 className="text-5xl font-bold mb-6">Postman</h1>
                     <p className="mt-4">
                         Postman is an API platform for building and testing API functionality.
-
                         If you are new to Postman you can check out the
                         <a href="https://learning.postman.com/docs/getting-started/introduction/" target="_blank" rel="noopener noreferrer" className="bg-sky-100 px-1 ml-1 border-b-2 border-sky-200 hover:bg-sky-200 hover:border-sky-300">Postman Learning Center</a>.
+                        Bellow you can download the import files to try out the API.
+                        Generate environment requires a clientId and a clientSecret and generate collection requires the version of the API you are planning to use (using the newest version is recommended).
+                        Make sure you update youre files once they are outdated according to the "last updated" dates.
                     </p>
                 </section>
 
@@ -83,11 +79,12 @@ const Connecting = () => {
                             <h1 className="text-3xl font-bold"><FontAwesomeIcon icon={faCube}/> Generate environment</h1>
                             <p className="bg-amber-100 px-1 w-fit mt-2">Last updated: 11-12-2022</p>
                             <br/>
-                            <label>ClientId:</label>
+                            <label>Client id:</label>
                             <div className="flex">
-                                <input className="w-2/3 border-2 p-1 text-sm outline-gray-300 rounded overflow-ellipsis "
+                                <input className="w-2/3 border-2 p-1 text-sm  outline-gray-700 rounded"
+                                       id="clientId"
                                        type="text"
-                                       placeholder="Rd0QC4qH1lZFn0QOpKufLIDkbbrO3NQB12WYMCXP+rs="
+                                       placeholder="clientId"
                                        value={collectionEdit.clientId}
                                        onChange={handleChange}
                                        name="clientId"
@@ -95,11 +92,12 @@ const Connecting = () => {
                                 {/*<button className="rounded px-1 border-2 text-red-600 border-red-600 ml-1 bg-red-100"><FontAwesomeIcon icon={faCircleExclamation}/></button>*/}
                                 <button onClick={() => handlePaste("clientId")} className="rounded px-1 border-2 border-gray-300 ml-1 bg-gray-100 hover:bg-gray-200 hover:border-gray-400 hover:text-gray-800"><FontAwesomeIcon icon={faPaste}/></button>
                             </div>
-                            <label>ClientSecret:</label>
+                            <label>Client secret:</label>
                             <div className="flex">
-                                <input className="w-2/3 border-2 p-1 text-sm outline-gray-300 rounded"
+                                <input className="w-2/3 border-2 p-1 text-sm  outline-gray-700 rounded"
+                                       id="clientSecret"
                                        type="text"
-                                       placeholder="Rd0QC4qH1lZFn0QOpKufLIDkbbrO3NQB12WYMCXP+rs="
+                                       placeholder="clientSecret"
                                        value={collectionEdit.clientSecret}
                                        onChange={handleChange}
                                        name="clientSecret"
