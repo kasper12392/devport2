@@ -1,40 +1,52 @@
-import React, {Fragment, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faCaretDown, faUser, faGear} from '@fortawesome/free-solid-svg-icons'
-import {Menu, Transition} from '@headlessui/react'
-import {Link, NavLink} from "react-router-dom";
+import {faCaretDown, faCaretUp, faGear, faUser, faSun, faMoon} from '@fortawesome/free-solid-svg-icons'
+import {Switch, Transition} from '@headlessui/react'
+import {NavLink, useLocation} from "react-router-dom";
 
 
 const NavBar = () => {
 
+    // dropdown
     const [isShowingStart, setIsShowingStart] = useState(false)
     const [isShowingDocs, setIsShowingDocs] = useState(false)
-    const [selected, setSelected] = useState("home")
+    const [selected, setSelected] = useState("")
+
+    // toggle darkmode
+    localStorage.theme === "dark" ? document.documentElement.classList.add('dark') : document.documentElement.classList.remove('dark');
+    const [enabled, setEnabled] = useState(localStorage.theme === "dark")
+    const toggleDarkmode = () => {
+        setEnabled(!enabled);
+        localStorage.theme = enabled ? "light" : "dark";
+
+    }
+
+    // url
+    const location = useLocation();
+    useEffect(() => {
+        setSelected(location.pathname);
+    }, [location]);
 
     return (
         <header className="bg-navbar shadow-xl sticky top-0 z-50">
             <div className="flex h-14 mx-auto items-center max-w-screen-lg text-lg text-gray-100">
-                {/*<header className="bg-neutral-100">*/}
-                {/*    <div className="flex h-14 mx-auto items-center max-w-screen-xl text-lg text-gray-700">*/}
 
                 <div className="">
                     <ul className="flex flex-row space-x-16">
-                        {/*<li className="px-6 rounded"><a href="default" className="text-cyan-400">Home</a><div className="bg-cyan-400 h-1"></div></li>*/}
-                        {/*<li className="px-6 rounded"><a href="default" className="text-orange-500"><FontAwesomeIcon icon={faHome}/></a></li>*/}
 
-                        <NavLink to="/home" onClick={() => setSelected("home")} className="relative">
+                        <NavLink to="/home" className="relative">
                             <button className="rounded hover:text-blue-300 active:text-blue-400 px-1">Home</button>
-                            <div className={selected === "home" ? "absolute border-b-4 border-blue-400 h-3.5 w-full" : undefined}></div>
+                            <div className={selected === "/home" ? "absolute border-b-4 border-blue-400 h-3.5 w-full" : undefined}></div>
                         </NavLink>
 
-                        <NavLink to="/connecting" onClick={() => setSelected("connecting")} className="relative">
+                        <NavLink to="/connecting" className="relative">
                             <button className="rounded hover:text-blue-300 active:text-blue-400 px-1">Connecting</button>
-                            <div className={selected === "connecting" ? "absolute border-b-4 border-blue-400 h-3.5 w-full" : undefined}></div>
+                            <div className={selected === "/connecting" ? "absolute border-b-4 border-blue-400 h-3.5 w-full" : undefined}></div>
                         </NavLink>
 
-                        <NavLink to="/postman" onClick={() => setSelected("postman")} className="relative">
+                        <NavLink to="/postman" className="relative">
                             <button className="rounded hover:text-blue-300 active:text-blue-400 px-1">Postman</button>
-                            <div className={selected === "postman" ? "absolute border-b-4 border-blue-400 h-3.5 w-full" : undefined}></div>
+                            <div className={selected === "/postman" ? "absolute border-b-4 border-blue-400 h-3.5 w-full" : undefined}></div>
                         </NavLink>
 
                         {/*<div className="relative">*/}
@@ -67,29 +79,29 @@ const NavBar = () => {
 
                         <div className="relative">
                             <button onClick={() => {setIsShowingDocs((isShowing) => !isShowing); setIsShowingStart(false)}}
-                                    className="relative rounded hover:text-blue-300 active:text-blue-400 px-1">Docs <FontAwesomeIcon icon={faCaretDown}/>
+                                    className="relative rounded hover:text-blue-300 active:text-blue-400 px-1">Docs <FontAwesomeIcon icon={isShowingDocs ? faCaretUp : faCaretDown}/>
                             </button>
-                            <div className={selected === "docs" ? "absolute border-b-4 border-blue-400 h-3.5 w-full" : undefined}></div>
+                            <div className={selected === ("/swagger" || "/functional-description" || "/errors") ? "absolute border-b-4 border-blue-400 h-3.5 w-full" : undefined}></div>
                             <Transition show={isShowingDocs} enter="transition-opacity duration-250" enterFrom="opacity-0" enterTo="opacity-100" leave="transition-opacity duration-125" leaveFrom="opacity-100" leaveTo="opacity-0">
                                 <div className="absolute bg-navbar -left-1 rounded shadow-xl p-2 pr-8 bg-opacity-90 text-base hover:[&>*]:text-blue-300 active:[&>*]:text-blue-400" onClick={() => setIsShowingDocs(false)}>
                                     <div className="py-1"></div>
-                                    <NavLink to="/swagger" onClick={() => setSelected("docs")}>
+                                    <NavLink to="/swagger">
                                         <div className="py-1">Swagger</div>
                                     </NavLink>
-                                    <NavLink to="/functional-description" onClick={() => setSelected("docs")}>
+                                    <NavLink to="/functional-description">
                                         <div className="py-1">FO</div>
                                     </NavLink>
-                                    <NavLink to="/errors" onClick={() => setSelected("docs")}>
+                                    <NavLink to="/errors">
                                         <div className="py-1">Errors</div>
                                     </NavLink>
                                 </div>
                             </Transition>
                         </div>
 
-                        <NavLink to="/release-notes" onClick={() => setSelected("release-notes")}>
+                        <NavLink to="/release-notes">
                             <div className="relative">
                                 <button className="rounded hover:text-blue-300 active:text-blue-400 px-1">Release notes</button>
-                                <div className={selected === "release-notes" ? "absolute border-b-4 border-blue-400 h-3.5 w-full" : undefined}></div>
+                                <div className={selected === "/release-notes" ? "absolute border-b-4 border-blue-400 h-3.5 w-full" : undefined}></div>
                             </div>
                         </NavLink>
 
@@ -98,8 +110,14 @@ const NavBar = () => {
 
                 <div className="grow"></div>
 
-                <button className="rounded px-2 py-0.5 hover:bg-navbar90"><FontAwesomeIcon icon={faUser}/></button>
-                <button className="rounded px-2 py-0.5 hover:bg-navbar90"><FontAwesomeIcon icon={faGear}/></button>
+                <Switch checked={enabled} onChange={toggleDarkmode} className={`${enabled ? "bg-indigo-500" : "bg-amber-500"} mx-2 relative inline-flex h-6 w-12 items-center rounded-full`}>
+                    <span className="sr-only">Enable notifications</span>
+                    <FontAwesomeIcon icon={enabled ? faMoon : faSun}
+                        className={`${enabled ? 'translate-x-6' : 'translate-x-1'} h-5 w-5 rounded-full transform transition`}
+                    />
+                </Switch>
+                <button className="rounded px-2 hover:bg-navbar90"><FontAwesomeIcon icon={faUser}/></button>
+                <button className="rounded px-2 hover:bg-navbar90"><FontAwesomeIcon icon={faGear}/></button>
 
             </div>
         </header>

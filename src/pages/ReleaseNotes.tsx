@@ -11,7 +11,7 @@ const ReleaseNotes = () => {
             <div className="space-y-20 mt-14">
                 <section className="w-3/4">
                     {/*<div className="bg-gray-100 rounded p-4 shadow-lg">*/}
-                    <h1 className="bg-sky-100 px-1 w-fit font-bold text-3xl">2022_09</h1>
+                    <h1 className="bg-amber-200 px-1 w-fit font-bold text-3xl">2022_09</h1>
                     <p className="bg-amber-100 px-1 w-fit mt-2 text-lg">11-12-2022</p>
                     <div className="border-b-2 mt-2"></div>
                     <br/>
@@ -39,7 +39,7 @@ const ReleaseNotes = () => {
 
                 <section className="w-3/4">
                     {/*<div className="bg-gray-100 rounded p-4 shadow-lg">*/}
-                    <h1 className="bg-sky-100 px-1 w-fit font-bold text-3xl">2022_08</h1>
+                    <h1 className="bg-amber-200 px-1 w-fit font-bold text-3xl">2022_08</h1>
                     <p className="bg-amber-100 px-1 w-fit mt-2 text-lg">23-09-2022</p>
                     <div className="border-b-2 mt-2"></div>
                     <br/>

@@ -9,7 +9,7 @@ const Home = () => {
 
             <div className=""></div>
 
-            <div className="bg-gray-50 -skew-y-1  py-12">
+            <div className="bg-gray-50 -skew-y-1 py-12">
                 <div className="flex space-x-24 max-w-screen-lg mx-auto skew-y-1">
                     <section className="">
                         <h3 className="text-3xl font-bold">About</h3>
@@ -188,7 +188,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <div className="bg-gray-50 skew-y-1  py-12">
+            <div className="bg-gray-50 skew-y-1 py-12">
                 <div className="flex space-x-24 max-w-screen-lg mx-auto -skew-y-1">
 
                     <section className="col-span-1">

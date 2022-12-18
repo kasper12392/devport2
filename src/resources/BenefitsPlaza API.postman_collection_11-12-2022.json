@@ -1,0 +1,411 @@
+{
+	"info": {
+		"_postman_id": "db4da652-952e-420e-85d6-17f616e7b8ba",
+		"name": "BenefitsPlaza API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21194178"
+	},
+	"item": [
+		{
+			"name": "oauth",
+			"item": [
+				{
+					"name": "oauthPing",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/oauth/ping",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"oauth",
+								"ping"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "oauthRefresh",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"refresh_token\", jsonData.refresh_token);\r",
+									"postman.setEnvironmentVariable(\"access_token\", jsonData.access_token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "refresh_token",
+									"type": "default"
+								},
+								{
+									"key": "refresh_token",
+									"value": "{{refresh_token}}",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/oauth/refresh",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"oauth",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "oauthAuthorize",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"refresh_token\", jsonData.refresh_token);\r",
+									"postman.setEnvironmentVariable(\"access_token\", jsonData.access_token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "default"
+								},
+								{
+									"key": "client_id",
+									"value": "{{client_id}}",
+									"type": "default"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{client_secret}}",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/oauth/authorize",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"oauth",
+								"authorize"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "v1",
+			"item": [
+				{
+					"name": "employee",
+					"item": [
+						{
+							"name": "employeeGet",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{access_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/v1/employee/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"employee",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "BPD1009580574"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "employeePing",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url}}/v1/employee/ping",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"employee",
+										"ping"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "employeePolicies",
+					"item": [
+						{
+							"name": "employeePoliciesGet",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{access_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/v1/employeePolicies/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"employeePolicies",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "BPD1009580574"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "employeePoliciesPing",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url}}/v1/employeePolicies/ping",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"employeePolicies",
+										"ping"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "employers",
+					"item": [
+						{
+							"name": "employersGet",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{access_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/v1/employers",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"employers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "employersPing",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url}}/v1/employers/ping",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"employers",
+										"ping"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "employees",
+					"item": [
+						{
+							"name": "employeesGet",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{access_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/v1/employees/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"employees",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "BPW1006581781"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "employeesPing",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url}}/v1/employees/ping",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"employees",
+										"ping"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "accessTokenUrl",
+				"value": "http://localhost:8080/VGCOBenefitsPlazaAPIPortal/refreshTokenQuery/refreshToken/getAccessToken",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

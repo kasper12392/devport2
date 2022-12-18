@@ -1,7 +1,7 @@
 import React, {ChangeEvent, useState} from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faDownload, faCube, faCaretDown, faCaretUp, faFolderTree} from "@fortawesome/free-solid-svg-icons";
-import {faPaste, faImage} from "@fortawesome/free-regular-svg-icons";
+import {faCaretDown, faCaretUp, faCube, faDownload, faFolderTree} from "@fortawesome/free-solid-svg-icons";
+import {faPaste} from "@fortawesome/free-regular-svg-icons";
 import {Transition} from "@headlessui/react";
 
 const Connecting = () => {
@@ -27,8 +27,10 @@ const Connecting = () => {
         const collection = require('../resources/' + fileName);
 
         if (isEnvironment) {
-            collection.clientId = collectionEdit.clientId;
-            collection.clientSecret = collectionEdit.clientSecret;
+
+            // fixme
+            collection.values[2].value = collectionEdit.clientId;
+            collection.values[3].value = collectionEdit.clientSecret;
         }
 
         const json = JSON.stringify(collection, null, 2);
@@ -104,8 +106,8 @@ const Connecting = () => {
                                 />
                                 <button onClick={() => handlePaste("clientSecret")} className="rounded px-1 border-2 border-gray-300 ml-1 bg-gray-100 hover:bg-gray-200 hover:border-gray-400 hover:text-gray-800"><FontAwesomeIcon icon={faPaste}/></button>
                             </div>
-                            <a href={determineHrefByFileName("postmantest2.json", true)} download="environment">
-                                <button className="w-28 bg-orange-500 text-white font-bold rounded py-1 px-2 mt-2 text-base hover:bg-orange-600">Generate <FontAwesomeIcon icon={faDownload}/></button>
+                            <a href={determineHrefByFileName("BenefitsPlaza API.postman_environment_11-12-2022.json", true)} download="BenefitsPlaza API.postman_environment_11-12-2022.json">
+                                <button className="w-28 bg-amber-500 text-white font-bold rounded py-1 px-2 mt-2 text-base hover:bg-amber-600">Generate <FontAwesomeIcon icon={faDownload}/></button>
                             </a>
                         </div>
 
@@ -127,8 +129,8 @@ const Connecting = () => {
                                     </div>
                                 </Transition>
                             </div>
-                            <a href={determineHrefByFileName("postmantest2.json", false)} download="environment">
-                                <button className="w-28 bg-orange-500 text-white font-bold rounded py-1 px-2 mt-2 text-base hover:bg-orange-600">Generate <FontAwesomeIcon icon={faDownload}/></button>
+                            <a href={determineHrefByFileName("BenefitsPlaza API.postman_collection_11-12-2022.json", false)} download="BenefitsPlaza API.postman_collection_11-12-2022.json">
+                                <button className="w-28 bg-amber-500 text-white font-bold rounded py-1 px-2 mt-2 text-base hover:bg-amber-600">Generate <FontAwesomeIcon icon={faDownload}/></button>
                             </a>
                         </div>
 

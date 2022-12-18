@@ -3,6 +3,7 @@ module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     fontFamily: {
       'sans': ['Cera Round Pro, Segoe UI, Roboto, Oxygen'],
