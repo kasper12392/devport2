@@ -1,4 +1,4 @@
-import React, {Fragment, useState} from 'react';
+import React, {Fragment, useEffect, useState} from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCaretDown, faUser, faGear} from '@fortawesome/free-solid-svg-icons'
 import {Menu, Transition} from '@headlessui/react'
@@ -96,9 +96,7 @@ const NavBar = () => {
 
                 <div className="grow"></div>
 
-                <NavLink to="/profile">
-                    <button className="rounded px-2 py-0.5 hover:bg-navbar90"><FontAwesomeIcon icon={faUser}/></button>
-                </NavLink>
+                <button className="rounded px-2 py-0.5 hover:bg-navbar90"><FontAwesomeIcon icon={faUser}/></button>
                 <button className="rounded px-2 py-0.5 hover:bg-navbar90"><FontAwesomeIcon icon={faGear}/></button>
 
             </div>

@@ -85,8 +85,8 @@ const Connecting = () => {
                         <p><span className="text-gray-200">&ensp;'grant_type'</span> : <span className="text-green-300">'authorization'</span></p>
                         {/*<p><span className="text-gray-200">&ensp;'client_id'</span> : <span className="text-green-300">'12345'</span></p>*/}
                         {/*<p><span className="text-gray-200">&ensp;'client_secret'</span> : <span className="text-green-300">'hjsrrhtshrtsdgr'</span></p>*/}
-                        <p><span className="text-gray-200">&ensp;'client_id'</span> : <span className="text-blue-300">&#123; clientId:string &#125;</span></p>
-                        <p><span className="text-gray-200">&ensp;'client_secret'</span> : <span className="text-blue-300">&#123; clientSecret:string &#125;</span></p>
+                        <p><span className="text-gray-200">&ensp;'client_id'</span> : <span className="text-blue-300">&#123; clientId: string &#125;</span></p>
+                        <p><span className="text-gray-200">&ensp;'client_secret'</span> : <span className="text-blue-300">&#123; clientSecret: string &#125;</span></p>
                         <p>&#125;</p>
                         <p><span className="font-bold text-rose-400">body </span>: &#123;&#125;</p>
                     </div>
@@ -116,8 +116,8 @@ const Connecting = () => {
                     {/*            <p><span className="text-gray-200">&ensp;'grant_type'</span> : <span className="text-green-300">'authorization'</span></p>*/}
                     {/*            /!*<p><span className="text-gray-200">&ensp;'client_id'</span> : <span className="text-green-300">'12345'</span></p>*!/*/}
                     {/*            /!*<p><span className="text-gray-200">&ensp;'client_secret'</span> : <span className="text-green-300">'hjsrrhtshrtsdgr'</span></p>*!/*/}
-                    {/*            <p><span className="text-gray-200">&ensp;'client_id'</span> : <span className="text-blue-300">&#123; clientId:string &#125;</span></p>*/}
-                    {/*            <p><span className="text-gray-200">&ensp;'client_secret'</span> : <span className="text-blue-300">&#123; clientSecret:string &#125;</span></p>*/}
+                    {/*            <p><span className="text-gray-200">&ensp;'client_id'</span> : <span className="text-blue-300">&#123; clientId: string &#125;</span></p>*/}
+                    {/*            <p><span className="text-gray-200">&ensp;'client_secret'</span> : <span className="text-blue-300">&#123; clientSecret: string &#125;</span></p>*/}
                     {/*            <p>&#125;</p>*/}
                     {/*            <p><span className="font-bold text-rose-400">body </span>: &#123;&#125;</p>*/}
                     {/*        </div>*/}
@@ -166,7 +166,7 @@ const Connecting = () => {
                 {/*        <p><span className="font-bold text-rose-400">headers </span>: &#123;</p>*/}
                 {/*        <p><span className="text-gray-200">&ensp;'content_type'</span> : <span className="text-green-300">'application/x-www-form-urlencoded;charset=UTF-8'</span></p>*/}
                 {/*        <p><span className="text-gray-200">&ensp;'grant_type'</span> : <span className="text-green-300">'refresh'</span></p>*/}
-                {/*        <p><span className="text-gray-200">&ensp;'refresh_token'</span> : <span className="text-blue-300">&#123; refreshToken:string &#125;</span></p>*/}
+                {/*        <p><span className="text-gray-200">&ensp;'refresh_token'</span> : <span className="text-blue-300">&#123; refreshToken: string &#125;</span></p>*/}
                 {/*        <p>&#125;</p>*/}
                 {/*        <p><span className="font-bold text-rose-400">body </span>: &#123;&#125;</p>*/}
                 {/*    </div>*/}

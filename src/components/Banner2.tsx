@@ -16,7 +16,6 @@ const Banner = () => {
         window.scrollTo(0, 0)
     }, [])
 
-    // @ts-ignore
     return (
         <div className="">
             <div className=" bg-gradient-to-r from-indigo-500 to-cyan-500 flex skew-y-1 relative -top-6">

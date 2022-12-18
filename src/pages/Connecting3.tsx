@@ -7,7 +7,7 @@ import {NavLink} from "react-router-dom";
 const Connecting = () => {
 
     // Scrolling
-    const doScroll = (elementId:string) => {
+    const doScroll = (elementId: string) => {
         const element = document.getElementById(elementId);
         element !== null && element.scrollIntoView({ behavior: "smooth" })
     }
@@ -19,8 +19,7 @@ const Connecting = () => {
     const [isScrollerVisible, setIsScrollerVisible] = useState(false);
     useEffect(() => {
         window.addEventListener("scroll", onScroll);
-        return () =>
-            window.removeEventListener("scroll", onScroll);
+        return () => window.removeEventListener("scroll", onScroll);
     })
     const onScroll = () => {
         setIsScrollerVisible((document.body.scrollTop || document.documentElement.scrollTop) > 1)
@@ -48,11 +47,11 @@ const Connecting = () => {
                     <p className="mt-4">
                         The steps below show how you can quickly setup and make use of the API:
                         <ul className="list-disc ml-12 my-2">
-                            <li><button onClick={() => doScroll("e1")} className="bg-sky-100 px-1 mb-1 border-b-2 border-sky-200">Authorization</button></li>
-                            <li><button onClick={() => doScroll("e2")} className="bg-sky-100 px-1 mb-1 border-b-2 border-sky-200">Refreshing tokens</button></li>
-                            <li><button onClick={() => doScroll("e3")} className="bg-sky-100 px-1 mb-1 border-b-2 border-sky-200">Obtaining data</button></li>
-                            <li><button onClick={() => doScroll("e4")} className="bg-sky-100 px-1 mb-1 border-b-2 border-sky-200">Example: Get request</button></li>
-                            <li><button onClick={() => doScroll("e5")} className="bg-sky-100 px-1 mb-1 border-b-2 border-sky-200">Example: Post request</button></li>
+                            <li><button onClick={() => doScroll("e1")} className="bg-sky-100 px-1 mb-1 border-b-2 border-sky-200 hover:bg-sky-200 hover:border-sky-300">Authorization</button></li>
+                            <li><button onClick={() => doScroll("e2")} className="bg-sky-100 px-1 mb-1 border-b-2 border-sky-200 hover:bg-sky-200 hover:border-sky-300">Refreshing tokens</button></li>
+                            <li><button onClick={() => doScroll("e3")} className="bg-sky-100 px-1 mb-1 border-b-2 border-sky-200 hover:bg-sky-200 hover:border-sky-300">Obtaining data</button></li>
+                            <li><button onClick={() => doScroll("e4")} className="bg-sky-100 px-1 mb-1 border-b-2 border-sky-200 hover:bg-sky-200 hover:border-sky-300">Example: Get request</button></li>
+                            <li><button onClick={() => doScroll("e5")} className="bg-sky-100 px-1 mb-1 border-b-2 border-sky-200 hover:bg-sky-200 hover:border-sky-300">Example: Post request</button></li>
                         </ul>
                         Each step shows the request the api expects with the corresponding response. All fields shown in the request examples are manditory and must contain their described values.
                         Values shown in curly brackets must be filled with the users data.
@@ -83,8 +82,8 @@ const Connecting = () => {
                                 <p>&#125;</p>
                                 <p><span className="font-bold text-rose-400">body </span>: &#123;</p>
                                 <p><span className="text-gray-200">&ensp;'grant_type'</span> : <span className="text-green-300">'authorization_code'</span></p>
-                                <p><span className="text-gray-200">&ensp;'client_id'</span> : <span className="text-blue-300">&#123; clientId:string &#125;</span></p>
-                                <p><span className="text-gray-200">&ensp;'client_secret'</span> : <span className="text-blue-300">&#123; clientSecret:string &#125;</span></p>
+                                <p><span className="text-gray-200">&ensp;'client_id'</span> : <span className="text-blue-300">&#123; clientId: string &#125;</span></p>
+                                <p><span className="text-gray-200">&ensp;'client_secret'</span> : <span className="text-blue-300">&#123; clientSecret: string &#125;</span></p>
                                 <p>&#125;</p>
                             </div>
                         </div>
@@ -130,7 +129,7 @@ const Connecting = () => {
                                 <p>&#125;</p>
                                 <p><span className="font-bold text-rose-400">body </span>: &#123;</p>
                                 <p><span className="text-gray-200">&ensp;'grant_type'</span> : <span className="text-green-300">'refresh_token'</span></p>
-                                <p><span className="text-gray-200">&ensp;'refresh_token'</span> : <span className="text-blue-300">&#123; refreshToken:string &#125;</span></p>
+                                <p><span className="text-gray-200">&ensp;'refresh_token'</span> : <span className="text-blue-300">&#123; refreshToken: string &#125;</span></p>
                                 <p>&#125;</p>
                             </div>
                         </div>
@@ -159,7 +158,7 @@ const Connecting = () => {
                         Now that you have obtained an access token you are authorized to retrieve and post data to the API depending on user privileges.
                         Basic examples of a get en post request are shown below.
                         If you are already familiar with basic get and post requests you can skip this part and head straight to the &ensp;
-                        <NavLink to="/swagger"><span className="bg-sky-100 px-1 border-b-2 border-sky-200">Swagger documentation</span></NavLink> for a more in depth overview of all our available endpoints.
+                        <NavLink to="/swagger"><span className="bg-sky-100 px-1 border-b-2 border-sky-200 hover:bg-sky-200 hover:border-sky-300">Swagger documentation</span></NavLink> for a more in depth overview of all our available endpoints.
                     </p>
                 </section>
 
@@ -185,7 +184,7 @@ const Connecting = () => {
                                 </p>
                                 <p><span className="font-bold text-rose-400">method </span>: <span className="font-bold text-sky-300">get</span></p>
                                 <p><span className="font-bold text-rose-400">headers </span>: &#123;</p>
-                                <p><span className="text-gray-200">&ensp;'Authorization'</span> : <span className="text-green-300">'Bearer ' </span><span className="text-white">+ </span><span className="text-blue-300">&#123; accessToken:string &#125;</span></p>
+                                <p><span className="text-gray-200">&ensp;'Authorization'</span> : <span className="text-green-300">'Bearer ' </span><span className="text-white">+ </span><span className="text-blue-300">&#123; accessToken: string &#125;</span></p>
                                 <p>&#125;</p>
                             </div>
                         </div>

@@ -192,7 +192,7 @@ const Home2 = () => {
                 <div className="flex space-x-24 max-w-screen-lg mx-auto -skew-y-1">
 
                     <section className="col-span-1">
-                        <h3 className="text-3xl font-bold">Obtaining access</h3>
+                        <h3 className="text-3xl font-bold">Request access</h3>
                         <p className="mt-1">
                             In time the API, and policies regarding the API can change. These changes are subject to the following guidelines.
                             The following states hold true for the change policy for this API.
